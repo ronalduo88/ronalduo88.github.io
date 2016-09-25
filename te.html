@@ -1,0 +1,95 @@
+<html>
+<head>
+<title> New Document </title>
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<script type="text/javascript" src="jQuery.js"></script>
+<style type="text/css">
+body {-webkit-perspective:100; overflow:hidden}
+.outer {margin:100px auto; width:200px; height:200px; position:relative; -webkit-transform-style:preserve-3d; -webkit-animation:my 5s linear infinite;}
+.a,.b,.c,.d,.e,.f,.g,.h,.a2,.b2,.c2,.d2,.e2,.f2,.g2 {width:200px; height:200px; position:absolute;}
+.a {background:red; -webkit-transform:rotateY(0deg) translateX(400px) rotateY(90deg);}
+.b {background:orange; -webkit-transform:rotateY(30deg) translateX(400px) rotateY(90deg);}
+.c {background:yellow; -webkit-transform:rotateY(60deg) translateX(400px) rotateY(90deg);}
+.d {background:green; -webkit-transform:rotateY(90deg) translateX(400px) rotateY(90deg);}
+.e {background:skyblue; -webkit-transform:rotateY(120deg) translateX(400px) rotateY(90deg);}
+.f {background:blue; -webkit-transform:rotateY(150deg) translateX(400px) rotateY(90deg);}
+.g {background:purple; -webkit-transform:rotateY(180deg) translateX(400px) rotateY(90deg);}
+.a2 {background:red; -webkit-transform:rotateY(0deg) translateX(400px) rotateY(90deg);}
+.b2 {background:orange; -webkit-transform:rotateY(30deg) translateX(-400px) rotateY(90deg);}
+.c2 {background:yellow; -webkit-transform:rotateY(60deg) translateX(-400px) rotateY(90deg);}
+.d2 {background:green; -webkit-transform:rotateY(90deg) translateX(-400px) rotateY(90deg);}
+.e2 {background:skyblue; -webkit-transform:rotateY(120deg) translateX(-400px) rotateY(90deg);}
+.f2 {background:blue; -webkit-transform:rotateY(150deg) translateX(-400px) rotateY(90deg);}
+.g2 {background:purple; -webkit-transform:rotateY(180deg) translateX(-400px) rotateY(90deg);}
+</style>
+</head>
+
+<body>
+<div class="outer">
+<div class="a"></div>
+<div class="b"></div>
+<div class="c"></div>
+<div class="d"></div>
+<div class="e"></div>
+<div class="f"></div>
+<div class="g"></div>
+<div class="a2"></div>
+<div class="b2"></div>
+<div class="c2"></div>
+<div class="d2"></div>
+<div class="e2"></div>
+<div class="f2"></div>
+</div>
+</body>
+<script type="text/javascript">
+<!--
+var body = $('body');
+var outer = $('.outer');
+var i = 0;
+var j = 0;
+var m = 0;
+var n = 0;
+body[0].style.backgroundColor = 'black';
+
+document.addEventListener('keydown',function(event){
+if (event.keyCode == '38')
+{
+i++;
+}
+if (event.keyCode == '40')
+{
+i--;
+}
+if (event.keyCode == '39')
+{
+j++;
+}
+if (event.keyCode == '37')
+{
+j--;
+}
+//document.preventDefault();
+outer.css({'-webkit-transform':'rotateX('+ i +'deg)'+'rotateY('+ j +'deg)'});
+},true);
+
+document.addEventListener('mousewheel',function(event){
+
+if (event.wheelDelta<0)
+{
+m+=150;
+body.css({'-webkit-perspective': m});
+
+}
+if (event.wheelDelta>0)
+{
+m-=150;
+body.css({'-webkit-perspective': m});
+}
+},true);
+
+//-->
+</script>
+</html>
